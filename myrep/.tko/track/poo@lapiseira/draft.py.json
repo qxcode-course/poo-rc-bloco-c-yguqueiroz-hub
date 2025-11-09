@@ -1,0 +1,109 @@
+{
+    "patches": [
+        {
+            "label": "2025-11-09_17-22-26",
+            "content": "@@ -2058,90 +2058,8 @@\n ue%0A%0A\n-        parts = line.strip().split()%0A        if not parts:%0A            continue%0A%0A%0A\n     \n",
+            "lines": "102"
+        },
+        {
+            "label": "2025-11-09_17-23-21",
+            "content": "@@ -2127,32 +2127,33 @@\n       continue%0A%0A\n+%0A\n         cmd = pa\n@@ -2277,178 +2277,15 @@\n t(pa\n-rts%5B1%5D))%0A        elif cmd == %22insert%22:%0A            if lapiseira:%0A                g = Grafite(float(parts%5B1%5D), parts%5B2%5D, int(parts%5B3%5D))%0A                lapiseira.inserir(g\n+trs%5B1%5D)\n )%0A  \n",
+            "lines": "107"
+        },
+        {
+            "label": "2025-11-09_17-24-39",
+            "content": "@@ -1901,17 +1901,16 @@\n main():%0A\n-%0A\n     lapi\n@@ -1940,21 +1940,16 @@\n  = None%0A\n-    %0A\n     for \n",
+            "lines": "110"
+        },
+        {
+            "label": "2025-11-09_17-27-10",
+            "content": "@@ -1941,16 +1941,20 @@\n  = None%0A\n+    \n %0A    for\n@@ -2152,23 +2152,16 @@\n      cmd\n-_prefix\n  = parts\n@@ -2169,103 +2169,8 @@\n 0%5D%0A%0A\n-        if not cmd_prefix.startswith(%22$%22):%0A            continue%0A%0A        cmd = cmd_prefix%5B1:%5D%0A%0A\n     \n",
+            "lines": "112"
+        },
+        {
+            "label": "2025-11-09_17-31-13",
+            "content": "@@ -1009,133 +1009,8 @@\n l:%0A%0A\n-%0A        if self.bico is not None:%0A            print(%22fail: ja existe um grafite no bico%22)%0A            return False%0A        %0A\n     \n@@ -1135,114 +1135,13 @@\n co =\n- self.tambor.pop(0)%0A        return False%0A    %0A%0A    def remove(self) -%3E bool:%0A        if self.bico is\n  None\n-:\n %0A   \n@@ -1149,135 +1149,18 @@\n     \n-    print(%22fail: nao existe um grafite no bico%22)%0A            return False%0A        %0A        self.bico = True%0A        return Fals\n+return Tru\n e%0A  \n",
+            "lines": "117"
+        },
+        {
+            "label": "2025-11-09_17-38-03",
+            "content": "@@ -2367,16 +2367,24 @@\n int(line\n+.strip()\n )%0A      \n@@ -2420,16 +2420,24 @@\n  = line.\n+strip().\n split()%0A\n",
+            "lines": "131"
+        },
+        {
+            "label": "2025-11-09_17-45-02",
+            "content": "@@ -2495,16 +2495,110 @@\n rts%5B0%5D%0A%0A\n+        if not cmd_prefix.startswith(%22$%22):%0A            continue%0A%0A        cmd = cmd_prefix%5B1:%5D%0A\n %0A       \n",
+            "lines": "131"
+        },
+        {
+            "label": "2025-11-09_17-45-17",
+            "content": "@@ -2495,16 +2495,17 @@\n rts%5B0%5D%0A%0A\n+%0A\n         \n",
+            "lines": "127"
+        },
+        {
+            "label": "2025-11-09_17-45-18",
+            "content": "@@ -2499,103 +2499,8 @@\n 0%5D%0A%0A\n-        if not cmd_prefix.startswith(%22$%22):%0A            continue%0A%0A        cmd = cmd_prefix%5B1:%5D%0A%0A\n     \n",
+            "lines": "126"
+        },
+        {
+            "label": "2025-11-09_17-45-29",
+            "content": "@@ -2316,45 +2316,8 @@\n in:%0A\n-        line = line.strip()%0A        %0A\n     \n",
+            "lines": "131"
+        },
+        {
+            "label": "2025-11-09_17-50-39",
+            "content": "@@ -2262,45 +2262,89 @@\n eira\n- = None%0A%0A    while True:%0A        try:\n+: Lapiseira %7C None = None%0A%0A    for line in sys.stdin:%0A        line = line.strip()\n %0A   \n@@ -2352,64 +2352,161 @@\n     \n+%0A \n     \n-line = input()%0A            parts = line.split()%0A    \n+   if line.startswith(%22#%22):%0A            print(line)%0A            continue%0A%0A        parts = line.split()%0A        if not parts:%0A            continue%0A%0A\n     \n@@ -2512,16 +2512,23 @@\n      cmd\n+_prefix\n  = parts\n@@ -2532,24 +2532,115 @@\n rts%5B0%5D%0A%0A    \n+    if not cmd_prefix.startswith(%22$%22):%0A            continue%0A%0A        cmd = cmd_prefix%5B1:%5D%0A%0A\n         if c\n@@ -2656,36 +2656,32 @@\n d%22:%0A            \n-    \n break%0A          \n@@ -2670,36 +2670,32 @@\n   break%0A        \n-  \n-  \n elif cmd == %22ini\n@@ -2694,28 +2694,24 @@\n  == %22init%22:%0A\n-    \n             \n@@ -2749,36 +2749,32 @@\n ts%5B1%5D))%0A        \n-    \n elif cmd == %22ins\n@@ -2775,28 +2775,24 @@\n = %22insert%22:%0A\n-    \n             \n@@ -2821,20 +2821,16 @@\n         \n-    \n g = Graf\n@@ -2883,36 +2883,32 @@\n                 \n-    \n lapiseira.inseri\n@@ -2912,36 +2912,32 @@\n erir(g)%0A        \n- \n-   \n elif cmd == %22sho\n@@ -2944,36 +2944,32 @@\n w%22:%0A            \n-  \n-  \n if lapiseira:%0A  \n@@ -2958,36 +2958,32 @@\n   if lapiseira:%0A\n-    \n                 \n@@ -2999,36 +2999,32 @@\n iseira)%0A        \n- \n-   \n elif cmd == %22pul\n@@ -3027,20 +3027,16 @@\n %22pull%22:%0A\n-    \n         \n@@ -3061,36 +3061,32 @@\n                 \n-    \n lapiseira.pull()\n@@ -3086,36 +3086,32 @@\n .pull()%0A        \n-   \n- \n elif cmd == %22rem\n@@ -3120,36 +3120,32 @@\n e%22:%0A            \n-    \n if lapiseira:%0A  \n@@ -3150,36 +3150,32 @@\n                 \n-  \n-  \n lapiseira.remove\n@@ -3173,28 +3173,24 @@\n ra.remove()%0A\n-    \n         elif\n@@ -3210,36 +3210,32 @@\n e%22:%0A            \n- \n-   \n if lapiseira:%0A  \n@@ -3224,36 +3224,32 @@\n   if lapiseira:%0A\n-    \n                 \n@@ -3270,38 +3270,30 @@\n e()%0A        \n-    \n else:%0A\n-    \n             \n@@ -3327,113 +3327,8 @@\n do%22)\n-%0A        except EOFError:%0A            break%0A        except Exception as e:%0A            print(%22fail: %7Be%7D%22)\n %0A%0Aif\n",
+            "lines": "133"
+        },
+        {
+            "label": "2025-11-09_17-58-32",
+            "content": "@@ -2270,180 +2270,8 @@\n one%0A\n-    for line in sys.stdin:%0A        line = line.strip()%0A        if not line:%0A             continue%0A%0A        print(f%22$%7Bline%7D%22)%0A        ui = line.split()%0A        cmd = ui%5B0%5D%0A%0A\n %0A   \n@@ -3107,67 +3107,8 @@\n e()%0A\n-            elif cmd.startswith(%22#%22):%0A                pass%0A\n     \n",
+            "lines": "125"
+        },
+        {
+            "label": "2025-11-09_18-04-28",
+            "content": "@@ -2244,16 +2244,17 @@\n main():%0A\n+%0A\n     lapi\n@@ -2266,17 +2266,16 @@\n  = None%0A\n-%0A\n     for \n@@ -2391,17 +2391,16 @@\n line%7D%22)%0A\n-%0A\n         \n@@ -2447,16 +2447,120 @@\n     \n-    try:\n+while True:%0A        try:%0A            line = input()%0A            parts = line.split()%0A            cmd = parts%5B0%5D%0A\n %0A   \n@@ -2679,26 +2679,29 @@\n seira(float(\n-ui\n+parts\n %5B1%5D))%0A      \n@@ -2778,16 +2778,19 @@\n         \n+g =\n  Grafite\n@@ -2800,18 +2800,24 @@\n oat(\n-ui\n+parts\n %5B1%5D), \n-ui\n+parts\n %5B2%5D,\n@@ -2821,18 +2821,21 @@\n 2%5D, int(\n-ui\n+parts\n %5B3%5D))%0A  \n@@ -2839,31 +2839,16 @@\n %0A       \n-      \n-   else:%0A\n         \n@@ -2856,51 +2856,27 @@\n     \n-       print(%22fail: lapiseira nao iniciada%22\n+lapiseira.inserir(g\n )%0A  \n@@ -3419,85 +3419,18 @@\n ept \n-Index\n+EOF\n Error:%0A\n-            print(%22fail: parametros insuficientes para '%7Bcmd%7D'%22)%0A\n     \n",
+            "lines": "136"
+        },
+        {
+            "label": "2025-11-09_18-10-01",
+            "content": "@@ -878,9 +878,9 @@\n mpat\n-%C3%AD\n+i\n vel%22\n",
+            "lines": "134"
+        },
+        {
+            "label": "2025-11-09_18-10-32",
+            "content": "@@ -800,16 +800,24 @@\n      if \n+grafite.\n calibre \n",
+            "lines": "134"
+        },
+        {
+            "label": "2025-11-09_18-11-55",
+            "content": "@@ -938,41 +938,15 @@\n end(\n-G\n+g\n rafite\n-(calibre, dureza, tamanho)\n )%0A  \n",
+            "lines": "134"
+        },
+        {
+            "label": "2025-11-09_18-12-23",
+            "content": "@@ -474,18 +474,19 @@\n   def __\n-st\n+rep\n r__(self\n@@ -482,24 +482,31 @@\n repr__(self)\n+ -%3E str\n :%0A        re\n@@ -804,16 +804,8 @@\n  if \n-grafite.\n cali\n@@ -934,23 +934,49 @@\n .append(\n-g\n+G\n rafite\n+(calibre, dureza, tamanho)\n )%0A      \n@@ -1305,27 +1305,28 @@\n      return \n-Tru\n+Fals\n e%0A    %0A%0A    \n@@ -1410,17 +1410,36 @@\n il: \n-bico vazi\n+nao existe um grafite no bic\n o%22)%0A\n@@ -1492,19 +1492,19 @@\n .bico = \n-Non\n+Tru\n e%0A      \n@@ -2107,16 +2107,16 @@\n se %22%5B%5D%22%0A\n+\n         \n@@ -2129,17 +2129,16 @@\n _str = %22\n- \n %22.join(m\n",
+            "lines": "134"
+        },
+        {
+            "label": "2025-11-09_18-22-18",
+            "content": "@@ -2691,56 +2691,8 @@\n %5D))%0A\n-                     lapiseira.inserir(grafite)%0A\n     \n",
+            "lines": "134"
+        },
+        {
+            "label": "2025-11-09_18-23-00",
+            "content": "@@ -988,32 +988,34 @@\n (self) -%3E bool:%0A\n+%0A%0A\n         if self.\n@@ -1285,32 +1285,33 @@\n eturn True%0A    %0A\n+%0A\n     def remove(s\n@@ -1458,35 +1458,36 @@\n %0A        return \n-Tru\n+Fals\n e%0A    %0A    def w\n@@ -2083,16 +2083,17 @@\n _str = %22\n+ \n %22.join(m\n@@ -2412,16 +2412,17 @@\n  ui%5B0%5D%0A%0A\n+%0A\n         \n@@ -2649,17 +2649,8 @@\n     \n-grafite =\n  Gra\n@@ -2683,24 +2683,25 @@\n int(ui%5B3%5D))%0A\n+ \n             \n@@ -2918,88 +2918,8 @@\n ra)%0A\n-                else:%0A                    print(%22fail: lapiseira nao iniciada%22)%0A\n     \n@@ -3017,88 +3017,8 @@\n l()%0A\n-                else:%0A                    print(%22fail: lapiseira nao iniciada%22)%0A\n     \n@@ -3120,88 +3120,8 @@\n e()%0A\n-                else:%0A                    print(%22fail: lapiseira nao iniciada%22)%0A\n     \n@@ -3233,75 +3233,54 @@\n     \n-    else:%0A                    print(%22fail: lapiseira nao iniciada%22)\n+elif cmd.startswith(%22#%22):%0A                pass\n %0A   \n@@ -3312,25 +3312,24 @@\n       print(\n-f\n %22fail: coman\n@@ -3330,24 +3330,16 @@\n  comando\n- '%7Bcmd%7D'\n  invalid\n@@ -3383,25 +3383,24 @@\n       print(\n-f\n %22fail: param\n@@ -3434,16 +3434,34 @@\n cmd%7D'%22)%0A\n+            break%0A\n         \n@@ -3501,17 +3501,16 @@\n   print(\n-f\n %22fail: %7B\n@@ -3548,12 +3548,19 @@\n :%0A    main()\n+%0A    %0A%0A\n",
+            "lines": "135"
+        },
+        {
+            "label": "2025-11-09_18-24-59",
+            "content": "@@ -1057,32 +1057,35 @@\n fail: ja existe \n+um \n grafite no bico%22\n",
+            "lines": "134"
+        },
+        {
+            "label": "2025-11-09_18-25-21",
+            "content": "import sys\n\nclass Grafite:\n    \n    def __init__(self, calibre: float, dureza: str, tamanho: int):\n        self.calibre = calibre\n        self.dureza = dureza\n        self.tamanho = tamanho\n\n    def get_desgaste_por_folha(self) -> int:\n        if self.dureza == \"HB\":\n            return 1\n        if self.dureza == \"2B\":\n            return 2\n        if self.dureza == \"4B\":\n            return 4\n        if self.dureza == \"6B\":\n            return 6\n        return 0 \n    \n    def __str__(self):\n        return f\"[{self.calibre:.1f}:{self.dureza}:{self.tamanho}]\"\n    \nclass Lapiseira:\n\n    def __init__(self, calibre: float):\n        self.calibre = calibre\n        self.bico: Grafite | None = None \n        self.tambor: list[Grafite] = []\n\n    def inserir(self, grafite: Grafite) -> bool:\n        if grafite.calibre != self.calibre:\n            print(\"fail: calibre incompat\u00edvel\")\n            return False\n        \n        self.tambor.append(grafite)\n        return True\n    \n    def pull(self) -> bool:\n        if self.bico is not None:\n            print(\"fail: ja existe grafite no bico\")\n            return False\n        \n        if not self.tambor:\n            print(\"fail: tambor esta vazio\")\n            return False\n        \n        self.bico = self.tambor.pop(0)\n        return True\n    \n    def remove(self) -> bool:\n        if self.bico is None:\n            print(\"fail: bico vazio\")\n            return False\n        \n        self.bico = None\n        return True\n    \n    def write(self):\n        if self.bico is None:\n            print(\"fail: nao existe grafite no bico\")\n            return\n        \n        if self.bico.tamanho <= 10:\n            print(\"fail: tamanho insuficiente\")\n            return\n        \n        desgaste = self.bico.get_desgaste_por_folha()\n\n        if (self.bico.tamanho - desgaste) < 10:\n            print(\"fail: folha incompleta\")\n            self.bico.tamanho = 10\n        else:\n            self.bico.tamanho -= desgaste\n\n    def __repr__(self) -> str:\n        bico_str = str(self.bico) if self.bico is not None else \"[]\"\n        tambor_str = \"\".join(map(str, self.tambor))\n\n        return f\"calibre: {self.calibre:.1f}, bico: {bico_str}, tambor: <{tambor_str}>\"\n \ndef main():\n    lapiseira = None\n\n    for line in sys.stdin:\n        line = line.strip()\n        if not line:\n             continue\n\n        print(f\"${line}\")\n\n        ui = line.split()\n        cmd = ui[0]\n\n        try:\n            if cmd == \"end\":\n                break\n            elif cmd == \"init\":\n                lapiseira = Lapiseira(float(ui[1]))\n            elif cmd == \"insert\":\n                if lapiseira:\n                    grafite = Grafite(float(ui[1]), ui[2], int(ui[3]))\n                    lapiseira.inserir(grafite)\n                else:\n                    print(\"fail: lapiseira nao iniciada\")\n            elif cmd == \"show\":\n                if lapiseira:\n                    print(lapiseira)\n                else:\n                    print(\"fail: lapiseira nao iniciada\")\n            elif cmd == \"pull\":\n                if lapiseira:\n                    lapiseira.pull()\n                else:\n                    print(\"fail: lapiseira nao iniciada\")\n            elif cmd == \"remove\":\n                if lapiseira:\n                    lapiseira.remove()\n                else:\n                    print(\"fail: lapiseira nao iniciada\")\n            elif cmd == \"write\":\n                if lapiseira:\n                    lapiseira.write()\n                else:\n                    print(\"fail: lapiseira nao iniciada\")\n            else:\n                print(f\"fail: comando '{cmd}' invalido\")\n        except IndexError:\n            print(f\"fail: parametros insuficientes para '{cmd}'\")\n        except Exception as e:\n            print(f\"fail: {e}\")\n\nif __name__ == \"__main__\":\n    main()",
+            "lines": "134"
+        }
+    ]
+}

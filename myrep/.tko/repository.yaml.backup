@@ -12,20 +12,21 @@ sources:
   type: clone
   branch: master
   cache_path: /workspaces/poo-rc-bloco-c-yguqueiroz-hub/myrep/.tko/cache/poo/Readme.md
-  cache_timestamp: '2025-11-09 00:28:57'
+  cache_timestamp: '2025-11-09 18:23:58'
   filters:
   - listas
 expanded:
 - poo@campanha-principal
 - poo@bloco_c-listas
 tasks:
-  poo@array: '{rate:100, alone:10}'
-  poo@budega: '{rate:100, alone:5, study:60}'
+  poo@array: '{rate:100, iagen:sim, alone:10, study:40}'
+  poo@budega: '{rate:100, iagen:sim, other:sim, alone:7, study:60}'
+  poo@lapiseira: '{rate:100, iagen:gemini, alone:7, study:60}'
 flags:
-  quests: 0
-  tracks: 0
+  quests: 2
+  tracks: 2
   tasks: 0
   graph: 0
   xray: 0
 lang: py
-selected: poo@budega
+selected: poo@bloco_c-listas
