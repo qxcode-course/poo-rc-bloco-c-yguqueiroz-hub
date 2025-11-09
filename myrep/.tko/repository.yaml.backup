@@ -12,13 +12,14 @@ sources:
   type: clone
   branch: master
   cache_path: /workspaces/poo-rc-bloco-c-yguqueiroz-hub/myrep/.tko/cache/poo/Readme.md
-  cache_timestamp: '2025-10-29 13:34:01'
+  cache_timestamp: '2025-11-08 23:07:22'
   filters:
   - listas
 expanded:
 - poo@campanha-principal
 - poo@bloco_c-listas
-tasks: {}
+tasks:
+  poo@array: '{rate:100, alone:10}'
 flags:
   quests: 0
   tracks: 0
@@ -26,4 +27,4 @@ flags:
   graph: 0
   xray: 0
 lang: py
-selected: poo@bloco_c-listas
+selected: poo@budega
