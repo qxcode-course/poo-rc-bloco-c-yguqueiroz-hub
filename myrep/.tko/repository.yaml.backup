@@ -12,7 +12,7 @@ sources:
   type: clone
   branch: master
   cache_path: /workspaces/poo-rc-bloco-c-yguqueiroz-hub/myrep/.tko/cache/poo/Readme.md
-  cache_timestamp: '2025-11-08 23:07:22'
+  cache_timestamp: '2025-11-09 00:28:57'
   filters:
   - listas
 expanded:
@@ -20,6 +20,7 @@ expanded:
 - poo@bloco_c-listas
 tasks:
   poo@array: '{rate:100, alone:10}'
+  poo@budega: '{rate:100, alone:5, study:60}'
 flags:
   quests: 0
   tracks: 0

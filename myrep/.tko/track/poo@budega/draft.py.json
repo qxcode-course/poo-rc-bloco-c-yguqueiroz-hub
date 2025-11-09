@@ -7,8 +7,33 @@
         },
         {
             "label": "2025-11-04_14-07-53",
-            "content": "class Market:\n    ",
+            "content": "@@ -1,16 +1,4 @@\n-import sys%0A%0A\n clas\n@@ -15,1860 +15,4 @@\n     \n-def __init__(self, num_counters: int):%0A        self.counters = %5BNone%5D * num_counters%0A        self.waiting = %5B%5D%0A%0A    def __str__(self) -%3E str:%0A        counters_str = %5B(%22----%22 if p is None else str(p)) for p in self.counters%5D%0A        waiting_str = %5Bstr(p) for p in self.waiting%5D%0A%0A        return (f%22Caixas: %5B%7B', '.join(counters_str)%7D%5D/n%22%0A                f%22Espera: %5B%7B', '.join(waiting_str)%7D%5D%22)%0A    %0A    def arrive(self, person: Person):%0A        self.waiting.append(person)%0A%0A    def call(self, index: int):%0A        if index %3C 0 or index %3E= len(self.counters):%0A            print(%22fail: caixa inexistente%22)%0A            return%0A        %0A        if not self.waiting:%0A            print(%22fail: sem clientes%22)%0A            return%0A        %0A        if self.counters%5Bindex%5D is not None:%0A            print(%22fail: caixa ocupado%22)%0A            return%0A        %0A        person = self.waiting.pop(0)%0A        self.counters%5Bindex%5D = person%0A%0A    def finish(self, index: int) -%3E Person %7C None:%0A%0A        if index %3C 0 or index %3E= len(self.counters):%0A            print(%22fail: caixa inexistente%22)%0A            return None%0A        %0A        if self.counters%5Bindex%5D is None:%0A            print(%22fail: caixa vazio%22)%0A            return None%0A        %0A        person = self.counters%5Bindex%5D%0A        self.counters%5Bindex%5D = None%0A        return person%0A    %0Aclass Person:%0A%0A    def __init__(self, name: str):%0A        self.name = name%0A%0A    def get_name(self) -%3E str:%0A        return self.name%0A    %0A    def __str__(self) -%3E str:%0A        return self.name%0A    %0A%0Adef main():%0A    market = Market(0)%0A    for line in sys.stdin:%0A        line = line.strip()%0A        if not line:%0A            continue%0A%0A        print(f%22$%7Bline%7D%22)%0A        ui = line.split()%0A        cmd = ui%5B0%5D%0A%0A        try:%0A             if cmd == %22end%22:%0A                 break%0A             elif cmd == %22init%22:%0A                 market = Market(int(ui%5B1\n",
             "lines": "2"
+        },
+        {
+            "label": "2025-11-09_00-29-02",
+            "content": "@@ -1883,587 +1883,4 @@\n ui%5B1\n-%5D))%0A             elif cmd == %22show%22:%0A                 print(market)%0A             elif cmd == %22arrive%22:%0A                 market.arrive(Person(ui%5B1%5D))%0A             elif cmd == %22call%22:%0A                 market.call(int(ui%5B1%5D))%0A             elif cmd == %22finish%22:%0A                 market.finish(int(ui%5B1%5D))%0A             else:%0A                 print(%22fail: comando invalido%22)%0A        except IndexError:%0A            print(%22fail: argumentos insuficientes para %7Bcmd%7D%22)%0A        except Exception as e:%0A            print(%22fail: erro ao executar %7Bcmd%7D: %7Be%7D%22)%0A%0Aif __name__ == %22__main__%22:%0A    main()\n",
+            "lines": "75"
+        },
+        {
+            "label": "2025-11-09_00-32-15",
+            "content": "@@ -358,9 +358,9 @@\n r)%7D%5D\n-%5C\n+/\n n%22%0A \n",
+            "lines": "92"
+        },
+        {
+            "label": "2025-11-09_00-35-38",
+            "content": "@@ -1,39 +1,4 @@\n-from __future__ import annotations%0A\n impo\n",
+            "lines": "92"
+        },
+        {
+            "label": "2025-11-09_00-37-03",
+            "content": "@@ -230,17 +230,16 @@\n  %5B(%22----\n--\n %22 if p i\n",
+            "lines": "93"
+        },
+        {
+            "label": "2025-11-09_00-37-55",
+            "content": "from __future__ import annotations\nimport sys\n\nclass Market:\n    def __init__(self, num_counters: int):\n        self.counters = [None] * num_counters\n        self.waiting = []\n\n    def __str__(self) -> str:\n        counters_str = [(\"-----\" if p is None else str(p)) for p in self.counters]\n        waiting_str = [str(p) for p in self.waiting]\n\n        return (f\"Caixas: [{', '.join(counters_str)}]\\n\"\n                f\"Espera: [{', '.join(waiting_str)}]\")\n    \n    def arrive(self, person: Person):\n        self.waiting.append(person)\n\n    def call(self, index: int):\n        if index < 0 or index >= len(self.counters):\n            print(\"fail: caixa inexistente\")\n            return\n        \n        if not self.waiting:\n            print(\"fail: sem clientes\")\n            return\n        \n        if self.counters[index] is not None:\n            print(\"fail: caixa ocupado\")\n            return\n        \n        person = self.waiting.pop(0)\n        self.counters[index] = person\n\n    def finish(self, index: int) -> Person | None:\n\n        if index < 0 or index >= len(self.counters):\n            print(\"fail: caixa inexistente\")\n            return None\n        \n        if self.counters[index] is None:\n            print(\"fail: caixa vazio\")\n            return None\n        \n        person = self.counters[index]\n        self.counters[index] = None\n        return person\n    \nclass Person:\n\n    def __init__(self, name: str):\n        self.name = name\n\n    def get_name(self) -> str:\n        return self.name\n    \n    def __str__(self) -> str:\n        return self.name\n    \n\ndef main():\n    market = Market(0)\n    for line in sys.stdin:\n        line = line.strip()\n        if not line:\n            continue\n\n        print(f\"${line}\")\n        ui = line.split()\n        cmd = ui[0]\n\n        try:\n             if cmd == \"end\":\n                 break\n             elif cmd == \"init\":\n                 market = Market(int(ui[1]))\n             elif cmd == \"show\":\n                 print(market)\n             elif cmd == \"arrive\":\n                 market.arrive(Person(ui[1]))\n             elif cmd == \"call\":\n                 market.call(int(ui[1]))\n             elif cmd == \"finish\":\n                 market.finish(int(ui[1]))\n             else:\n                 print(\"fail: comando invalido\")\n        except IndexError:\n            print(\"fail: argumentos insuficientes para {cmd}\")\n        except Exception as e:\n            print(\"fail: erro ao executar {cmd}: {e}\")\n\nif __name__ == \"__main__\":\n    main()",
+            "lines": "93"
         }
     ]
 }

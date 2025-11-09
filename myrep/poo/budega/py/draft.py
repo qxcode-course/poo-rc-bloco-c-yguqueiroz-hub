@@ -1,3 +1,4 @@
+from __future__ import annotations
 import sys
 
 class Market:
@@ -6,10 +7,10 @@ class Market:
         self.waiting = []
 
     def __str__(self) -> str:
-        counters_str = [("----" if p is None else str(p)) for p in self.counters]
+        counters_str = [("-----" if p is None else str(p)) for p in self.counters]
         waiting_str = [str(p) for p in self.waiting]
 
-        return (f"Caixas: [{', '.join(counters_str)}]/n"
+        return (f"Caixas: [{', '.join(counters_str)}]\n"
                 f"Espera: [{', '.join(waiting_str)}]")
     
     def arrive(self, person: Person):
@@ -72,4 +73,21 @@ def main():
              if cmd == "end":
                  break
              elif cmd == "init":
-                 market = Market(int(ui[1
+                 market = Market(int(ui[1]))
+             elif cmd == "show":
+                 print(market)
+             elif cmd == "arrive":
+                 market.arrive(Person(ui[1]))
+             elif cmd == "call":
+                 market.call(int(ui[1]))
+             elif cmd == "finish":
+                 market.finish(int(ui[1]))
+             else:
+                 print("fail: comando invalido")
+        except IndexError:
+            print("fail: argumentos insuficientes para {cmd}")
+        except Exception as e:
+            print("fail: erro ao executar {cmd}: {e}")
+
+if __name__ == "__main__":
+    main()
