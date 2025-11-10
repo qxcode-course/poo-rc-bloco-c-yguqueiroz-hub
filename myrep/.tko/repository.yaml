@@ -12,7 +12,7 @@ sources:
   type: clone
   branch: master
   cache_path: /workspaces/poo-rc-bloco-c-yguqueiroz-hub/myrep/.tko/cache/poo/Readme.md
-  cache_timestamp: '2025-11-09 18:23:58'
+  cache_timestamp: '2025-11-10 22:41:31'
   filters:
   - listas
 expanded:
@@ -22,11 +22,13 @@ tasks:
   poo@array: '{rate:100, iagen:sim, alone:10, study:40}'
   poo@budega: '{rate:100, iagen:sim, other:sim, alone:7, study:60}'
   poo@lapiseira: '{rate:100, iagen:gemini, alone:7, study:60}'
+  poo@pula-pula: '{rate:100, iagen:gemini, other:eu_dei_f5_no_github_sem_dar_commit_pq_ele_tinha_bugado_ai_meu_tempo_ficou_em_9_minutos,
+    alone:7, study:70}'
 flags:
   quests: 2
   tracks: 2
   tasks: 0
-  graph: 0
+  graph: 1
   xray: 0
 lang: py
-selected: poo@campanha-principal
+selected: poo@pula-pula

@@ -1,0 +1,16 @@
+2025-11-10 22:41:38, MOVE, v:1, k:poo@pula-pula, mode:DOWN
+2025-11-10 22:41:40, MOVE, v:1, k:poo@pula-pula, mode:PICK
+2025-11-10 23:46:21, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:0, size:81
+2025-11-10 23:46:26, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:0
+2025-11-10 23:47:08, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:0, size:81
+2025-11-10 23:47:19, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:0
+2025-11-10 23:47:22, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:0, size:81
+2025-11-10 23:49:28, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:0, size:81
+2025-11-10 23:54:37, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:0, size:80
+2025-11-10 23:54:50, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:0
+2025-11-10 23:55:19, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:100, size:81
+2025-11-10 23:55:29, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:100
+2025-11-10 23:55:31, MOVE, v:1, k:poo@pula-pula, mode:BACK
+2025-11-10 23:55:52, MOVE, v:1, k:poo@pula-pula, mode:PICK
+2025-11-10 23:55:53, MOVE, v:1, k:poo@pula-pula, mode:BACK
+2025-11-10 23:57:13, SELF, v:1, k:poo@pula-pula, rate:100, iagen:gemini, other:eu_dei_f5_no_github_sem_dar_commit_pq_ele_tinha_bugado_ai_meu_tempo_ficou_em_9_minutos, alone:7, study:70

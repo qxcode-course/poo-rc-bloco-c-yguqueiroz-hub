@@ -1,0 +1,34 @@
+{
+    "patches": [
+        {
+            "label": "2025-11-10_23-46-21",
+            "content": "@@ -630,33 +630,32 @@\n not self.playing\n-:\n %0A            ret\n",
+            "lines": "81"
+        },
+        {
+            "label": "2025-11-10_23-47-08",
+            "content": "@@ -768,17 +768,16 @@\n me: str)\n-:\n %0A       \n",
+            "lines": "81"
+        },
+        {
+            "label": "2025-11-10_23-47-22",
+            "content": "@@ -1672,16 +1672,17 @@\n cmd == '\n+$\n end':%0A  \n@@ -1720,16 +1720,17 @@\n cmd == '\n+$\n show':%0A \n@@ -1780,16 +1780,17 @@\n cmd == '\n+$\n arrive':\n@@ -1867,16 +1867,17 @@\n cmd == '\n+$\n enter':%0A\n@@ -1929,16 +1929,17 @@\n cmd == '\n+$\n leave':%0A\n@@ -1991,16 +1991,17 @@\n cmd == '\n+$\n remove':\n",
+            "lines": "81"
+        },
+        {
+            "label": "2025-11-10_23-49-28",
+            "content": "@@ -1447,29 +1447,33 @@\n     \n-for line in sys.stdin\n+ while True:%0A         try\n :%0A  \n@@ -1483,25 +1483,24 @@\n     \n+ \n+   \n line = \n-l\n in\n-e.strip\n+put\n ()%0A \n@@ -1511,19 +1511,23 @@\n     \n-if not line\n+except EOFError\n :%0A  \n@@ -1541,16 +1541,13 @@\n     \n-continue\n+break\n %0A   \n@@ -1557,55 +1557,72 @@\n    p\n-rint(f%22$%7Bline%7D%22)%0A%0A         parts = line.split()\n+arts = line.split()%0A         if not parts:%0A             continue\n %0A   \n",
+            "lines": "81"
+        },
+        {
+            "label": "2025-11-10_23-54-37",
+            "content": "@@ -1,15 +1,4 @@\n-import sys%0A\n from\n@@ -1405,24 +1405,25 @@\n in():%0A     %0A\n+ \n     trampoli\n",
+            "lines": "80"
+        },
+        {
+            "label": "2025-11-10_23-55-19",
+            "content": "import sys\nfrom collections import deque \n\nclass Crian\u00e7a:\n    def __init__(self, name: str, age: int):\n        self.name = name\n        self.age = age\n\n\n    def __str__(self) -> str:\n        return f\"{self.name}:{self.age}\"\n    \nclass Trampolim:\n    def __init__(self):\n        self.waiting = deque()\n        self.playing = deque()\n\n    def arrive(self, name: str, age: int):\n        crian\u00e7a = Crian\u00e7a(name, age)\n        self.waiting.append(crian\u00e7a)\n\n    def enter(self):\n        if not self.waiting:\n            return\n        \n        crian\u00e7a = self.waiting.popleft()\n        self.playing.append(crian\u00e7a)\n\n    def leave(self):\n        if not self.playing:\n            return\n        crian\u00e7a = self.playing.popleft()\n        self.waiting.append(crian\u00e7a)\n\n    def remove(self,name: str):\n        for crian\u00e7a in self.waiting:\n            if crian\u00e7a.name == name:\n                self.waiting.remove(crian\u00e7a)\n                return\n            \n        for crian\u00e7a in self.playing:\n            if crian\u00e7a.name == name:\n                self.playing.remove(crian\u00e7a)\n                return\n            \n        print(f\"fail: {name} nao esta no pula-pula\")\n\n    def __str__(self) -> str:\n        waiting_str = \", \".join([str(crian\u00e7a) for crian\u00e7a in  reversed(self.waiting)])\n        playing_str = \", \".join([str(crian\u00e7a) for crian\u00e7a in reversed(self.playing)])\n        return f\"[{waiting_str}] => [{playing_str}]\"\n\ndef main():\n     \n    trampolim = Trampolim()\n\n    for line in sys.stdin:\n         line = line.strip()\n         if not line:\n             continue\n         print(f\"${line}\")\n\n         parts = line.split()\n         cmd = parts[0]\n         \n         if cmd == 'end':\n             break\n         elif cmd == 'show':\n             print(trampolim)\n         elif cmd == 'arrive':\n             trampolim.arrive(parts[1], int(parts[2]))\n         elif cmd == 'enter':\n             trampolim.enter()\n         elif cmd == 'leave':\n             trampolim.leave()\n         elif cmd == 'remove':\n             trampolim.remove(parts[1])\n         else:\n             print(f\"fail: comando'{cmd}' inv\u00e1lido\")\nif __name__ == \"__main__\":\n    main()",
+            "lines": "81"
+        }
+    ]
+}
