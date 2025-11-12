@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2025-11-12_22-10-57",
+            "content": "class Client:\n    def __init__(self, id: str, phone: int):\n        self.id = id \n        self.phone = phone\n\n    def __str__(self):\n        return f\"{self.id},{self.phone}\"\n    \nclass Theater:\n    def __init__(self, capacity: int):\n        self.seats = [None] * capacity\n\n    def _verify_index(self, index: int) -> bool:\n        return 0 <= index < len(self.seats)\n    \n    def _search(self, id: str) -> int:",
+            "lines": "16"
+        }
+    ]
+}
