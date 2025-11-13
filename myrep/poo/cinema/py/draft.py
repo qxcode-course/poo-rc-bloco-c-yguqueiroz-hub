@@ -18,3 +18,21 @@ class Theater:
             if client is not None:
                 if client.id == id:
                     return i 
+        return -1
+    def reserve(self,id: str, phone: int, index: int):
+        if not self._verify_index(index):
+            print("fail: cadeira nao existe")
+            return
+        
+        if self.seat[index] is not None:
+            print("fail: cadeira ja esta ocupada")
+            return
+        
+        if self._search(id) != -1:
+            print("fail: cliente ja esta no cinema")
+            return
+        
+        self.seats[index] = Client(id, phone)
+
+    def cancel(self, id: str):
+        index = self._seach(id)
